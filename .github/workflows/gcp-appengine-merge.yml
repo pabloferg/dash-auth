@@ -1,6 +1,6 @@
 - name: Deploy an App Engine app
   'on':
-    push:
+    merge:
       branches:
         - main
   id: deploy-app
