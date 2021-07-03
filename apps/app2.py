@@ -6,7 +6,9 @@ from app import dash_app
 
 layout = html.Div([
     html.H3('Welcome to the Proof Of Concept of Dash 😊'),
-    html.P('This application is written in Python and deployed in GCP App Engine ☁️')
+    html.P('This application is written in Python and deployed in GCP App Engine ☁️'),
+    html.P('and deployed via Github Actions')
+
 ])
 
 

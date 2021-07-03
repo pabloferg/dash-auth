@@ -3,9 +3,7 @@
     merge:
       branches:
         - main
-  id: deploy-app
-  uses: google-github-actions/deploy-appengine@v0.1.0
+- id: Deploy
+  uses: google-github-actions/deploy-appengine@main
   with:
-    project: ${{ secrets.gcp_project }}
-    deliverables: path/to/app.yaml
-    credentials: ${{ secrets.gcp_credentials }}
+    credentials: ${{ secrets.GCP_SA_KEY }}
