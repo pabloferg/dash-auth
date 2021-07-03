@@ -1,3 +1,5 @@
+import dash
+import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
@@ -5,9 +7,16 @@ from dash.dependencies import Input, Output
 from components import navbar
 
 
-from app import dash_app
+from app import app, dash_app
 from apps import app1, app2
 
+external_stylesheets = [dbc.themes.BOOTSTRAP]
+
+dash_app = dash.Dash(__name__, external_stylesheets=external_stylesheets, suppress_callback_exceptions=True)
+
+dash_app.title = "Hexagon"
+
+app = dash_app.server
 
 
 
