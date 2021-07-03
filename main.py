@@ -1,37 +1,38 @@
-import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import plotly.express as px
-import pandas as pd
+from dash.dependencies import Input, Output
 
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+from components import navbar
 
 
-dash_app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-app = dash_app.server
+from app import dash_app
+from apps import app1, app2
 
-# assume you have a "long-form" data frame
-# see https://plotly.com/python/px-arguments/ for more options
-df = pd.DataFrame({
-    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
-    "Amount": [4, 1, 2, 2, 4, 5],
-    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
-})
 
-fig = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
 
-dash_app.layout = html.Div(children=[
-    html.H1(children='Hello Pablo'),
 
-    html.Div(children='''
-        Dash: A web application framework for Python.
-    '''),
 
-    dcc.Graph(
-        id='example-graph',
-        figure=fig
-    )
+dash_app.layout = html.Div([
+
+    navbar.navbar,
+    # represents the URL bar, doesn't render anything
+    dcc.Location(id='url', refresh=False),
+    # content will be rendered in this element
+    html.Div(id='page-content', style={"padding": "20px"})
 ])
+
+
+@dash_app.callback(Output('page-content', 'children'),
+              Input('url', 'pathname'))
+def display_page(pathname):
+    if pathname == '/':
+        return app2.layout
+    if pathname == '/apps/app1':
+        return app1.layout
+    if pathname == '/apps/app2':
+        return app2.layout
+    else:
+        return '404'
 
 if __name__ == '__main__':
     dash_app.run_server(debug=True)
