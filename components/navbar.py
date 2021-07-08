@@ -19,9 +19,9 @@ navbar = dbc.Navbar(
         ),
         dbc.NavLink("Intro", id='button_navbar_intro', active=True, style={"color":"rgba(0,0,0,1)",":hover": {"background-color": "#555555"}, 'transition-duration': '0.4s'}, href='/app2'),
         dbc.NavLink("Linear Programming", id='button_navbar_lp',  style={"color":"rgba(0,0,0,1)"}, active=True, href='/app1'),
-        dbc.NavLink("Slides", id='button_navbar_slides',  style={"color": "rgba(0,0,0,1)"}, active=True, href='/slides'),
-        dbc.NavLink("Slides2", id='button_navbar_slides2',  style={"color": "rgba(0,0,0,1)"}, active=True, href='/slides2'),
-        dbc.NavLink("Slides3", id='button_navbar_slides3',  style={"color": "rgba(0,0,0,1)"}, active=True, href='/slides3'),
+        dbc.NavLink("Slide Template", id='button_navbar_slides',  style={"color": "rgba(0,0,0,1)"}, active=True, href='/slides'),
+        dbc.NavLink("Slide Template-2", id='button_navbar_slides2',  style={"color": "rgba(0,0,0,1)"}, active=True, href='/slides2'),
+        dbc.NavLink("Interactive visualisation", id='button_navbar_slides3',  style={"color": "rgba(0,0,0,1)"}, active=True, href='/slides3'),
         dbc.NavLink("Library", id='button_navbar_library',  style={"color": "rgba(0,0,0,1)"}, active=True, href='/library')
 
     ],
