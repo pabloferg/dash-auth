@@ -8,12 +8,9 @@ layout = html.Div([
     html.H1('Welcome to the Proof Of Concept of Dash'),
     html.Br(),
     html.P('This application is written in Python and deployed in GCP App Engine ☁️'),
-    html.P('and deployed via Github Actions'),
+    html.P('The deployment is fully automated via Github Actions 🤖'),
     html.Br(),
-    html.H2('Why?'),
-    html.Br(),
-    html.P('Notebooks and Slides are great to analyse and present data.'),
-    html.P('Notebooks and Slides are great to analyse and present data.'),
+    html.P('This tool is modular, so each section lives separately from the others, making contribution and maintenance easier ✅'),
 
     html.Br(),
 

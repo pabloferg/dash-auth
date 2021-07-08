@@ -42,12 +42,12 @@ layout = html.Div([
                                      "width":"50%"})
 
     ,html.Div([
-        html.H3('Solution'),
+        html.H3(''),
         html.Div([
-            html.P("Maximise", id="maximise-text"),
-            html.P("Hey", id="equation")
+            html.P("", id="maximise-text"),
+            html.P("", id="equation")
         ])]
-        ,style={"background-color":"blue"} )
+        ,style={"background-color":"white"} )
         ],
 
 style={"padding-top" : "50px",
